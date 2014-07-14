@@ -3,6 +3,8 @@
 // Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file or at
 // https://developers.google.com/open-source/licenses/bsd
+//
+// Based on Cassis by Tantek Çelik, released under CC0 license.
 
 // Package newbase60 implements NewBase60 encoding and decoding as specified by
 // http://ttk.me/w/NewBase60.
