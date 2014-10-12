@@ -8,7 +8,7 @@
 
 // Package newbase60 implements NewBase60 encoding and decoding as specified by
 // http://ttk.me/w/NewBase60.
-package newbase60
+package newbase60 // import "willnorris.com/go/newbase60"
 
 const table = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
 
