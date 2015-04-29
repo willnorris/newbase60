@@ -16,7 +16,7 @@ func TestEncodeInt(t *testing.T) {
 		{0, ""},
 		{60, "10"},
 		{1152, "KC"},
-		{-1, ""},
+		{-1, ""}, // negative numbers are ignored
 	}
 
 	for _, tt := range tests {
@@ -28,12 +28,14 @@ func TestEncodeInt(t *testing.T) {
 
 func TestDecodeToInt(t *testing.T) {
 	tests := []struct {
-		n int
 		s string
+		n int
 	}{
-		{0, ""},
-		{60, "10"},
-		{1152, "KC"},
+		{"", 0},
+		{"10", 60},
+		{"KC", 1152},
+		{"!/*#", 0},    // invalid chars are ignored
+		{".*KC", 1152}, // invalid chars at beginning have no effect
 	}
 
 	for _, tt := range tests {
