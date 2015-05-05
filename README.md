@@ -1,7 +1,4 @@
-[![Build Status](https://travis-ci.org/willnorris/newbase60.svg?branch=master)](https://travis-ci.org/willnorris/newbase60)
-[![GoDoc](https://godoc.org/willnorris.com/go/newbase60?status.svg)](https://godoc.org/willnorris.com/go/newbase60)
-
-# newbase60 #
+# newbase60 [![Build Status](https://travis-ci.org/willnorris/newbase60.svg?branch=master)](https://travis-ci.org/willnorris/newbase60) [![GoDoc](https://godoc.org/willnorris.com/go/newbase60?status.svg)](https://godoc.org/willnorris.com/go/newbase60) [![BSD License](https://img.shields.io/badge/license-BSD-blue.svg?style=flat)](LICENSE)
 
 This package is a go implementation of [Tantek Çelik][tantek]'s [NewBase60][]
 algorithm.
