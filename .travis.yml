@@ -5,7 +5,6 @@ go:
   - 1.4
 
 install:
-  - export GOPATH="$HOME/gopath"
   - mkdir -p "$GOPATH/src/willnorris.com/go"
   - mv "$TRAVIS_BUILD_DIR" "$GOPATH/src/willnorris.com/go/newbase60"
   - go get -v -t -d willnorris.com/go/newbase60/...
