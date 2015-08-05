@@ -11,4 +11,10 @@ algorithm.
 This library is copyright Google, but is not an official Google product.  It is
 available under a [BSD License][].
 
+Based on the NewBase60 implemention in [Cassis][], by [Tantek Çelik][],
+[released under][] a CC0 license.
+
 [BSD License]: LICENSE
+[Cassis]: http://cassisjs.org/
+[Tantek Çelik]: http://tantek.com/
+[released under]: https://github.com/willnorris/wordpress-hum/issues/8
