@@ -1,13 +1,8 @@
 language: go
+sudo: false
 
 go:
-  - 1.3
-  - 1.4
+  - 1.x
 
-install:
-  - mkdir -p "$GOPATH/src/willnorris.com/go"
-  - mv "$TRAVIS_BUILD_DIR" "$GOPATH/src/willnorris.com/go/newbase60"
-  - go get -v -t -d willnorris.com/go/newbase60/...
-
-script:
-  - go test -v willnorris.com/go/newbase60/...
+go_import_path: willnorris.com/go/newbase60
+install: true
