@@ -1,4 +1,9 @@
-# newbase60 [![Build Status](https://travis-ci.org/willnorris/newbase60.svg?branch=master)](https://travis-ci.org/willnorris/newbase60) [![GoDoc](https://godoc.org/willnorris.com/go/newbase60?status.svg)](https://godoc.org/willnorris.com/go/newbase60) [![BSD License](https://img.shields.io/badge/license-BSD-blue.svg?style=flat)](LICENSE)
+# newbase60
+
+[![GoDoc](https://godoc.org/willnorris.com/go/newbase60?status.svg)](https://godoc.org/willnorris.com/go/newbase60)
+[![Build Status](https://travis-ci.org/willnorris/newbase60.svg?branch=master)](https://travis-ci.org/willnorris/newbase60)
+[![Test Coverage](https://codecov.io/gh/willnorris/newbase60/branch/master/graph/badge.svg)](https://codecov.io/gh/willnorris/newbase60)
+[![BSD License](https://img.shields.io/badge/license-BSD-blue.svg?style=flat)](LICENSE)
 
 This package is a go implementation of [Tantek Çelik][tantek]'s [NewBase60][]
 algorithm.
@@ -6,7 +11,7 @@ algorithm.
 [tantek]: http://tantek.com/
 [NewBase60]: http://tantek.com/w/NewBase60
 
-## License ##
+## License
 
 This library is copyright Google, but is not an official Google product.  It is
 available under a [BSD License][].
