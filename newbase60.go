@@ -18,23 +18,25 @@ func DecodeToInt(s string) int {
 	for i := 0; i < len(s); i++ {
 		c := s[i]
 		switch {
-		case 48 <= c && c <= 57:
+		case 48 <= c && c <= 57: // 0-9
 			c -= 48
-		case 65 <= c && c <= 72:
+		case 65 <= c && c <= 72: // A-H
 			c -= 55
-		case c == 73 || c == 108:
-			c = 1 // capital I, lowercase l => 1
-		case 74 <= c && c <= 78:
+		case c == 73: // capital I => number 1
+			c = 1
+		case 74 <= c && c <= 78: // J-N
 			c -= 56
-		case c == 79:
-			c = 0 // capital O => 0
-		case 80 <= c && c <= 90:
+		case c == 79: // capital O => number 0
+			c = 0
+		case 80 <= c && c <= 90: // P-Z
 			c -= 57
-		case c == 95:
-			c = 34 // underscore
-		case 97 <= c && c <= 107:
+		case c == 95: // underscore
+			c = 34
+		case 97 <= c && c <= 107: // a-k
 			c -= 62
-		case 109 <= c && c <= 122:
+		case c == 108: // lowercase l => number 1
+			c = 1
+		case 109 <= c && c <= 122: // m-z
 			c -= 63
 		default:
 			c = 0 // treat all other noise as 0
