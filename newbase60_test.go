@@ -36,9 +36,10 @@ func TestDecodeToInt(t *testing.T) {
 		{"KC", 1152},
 		{"2BIK", 471679},
 		{"OT_bln", 357393707},
-		{"!/*#", 0},    // invalid chars are ignored
-		{".*KC", 1152}, // invalid chars at beginning have no effect
-		{"1*", 60},     // invalid chars at end are treated as 0
+		{"!/*#白", 0},    // invalid chars are ignored
+		{"白.*KC", 1152}, // invalid chars at beginning have no effect
+		{"1*", 60},      // invalid chars at end are treated as 0
+		{"1白", 60},      // invalid chars at end are treated as 0
 	}
 
 	for _, tt := range tests {

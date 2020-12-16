@@ -15,8 +15,7 @@ const table = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ_abcdefghijkmnopqrstuvwxyz"
 // DecodeToInt decodes the sexagesimal number s to an int.
 func DecodeToInt(s string) int {
 	var n int
-	for i := 0; i < len(s); i++ {
-		c := s[i]
+	for _, c := range s {
 		switch {
 		case 48 <= c && c <= 57: // 0-9
 			c -= 48
