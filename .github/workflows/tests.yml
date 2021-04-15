@@ -7,34 +7,35 @@ jobs:
   test:
     strategy:
       matrix:
-        go-version: [1.x, 1.12.x]
-        platform: [ubuntu-latest, windows-latest]
+        go-version: [1.x, 1.15.x]
+        platform: [ubuntu-latest]
+        include:
+          # test windows with latest go version
+          - go-version: 1.x
+            platform: windows-latest
+
+          # only update test coverage with latest go version on linux
+          - go-version: 1.x
+            platform: ubuntu-latest
+            update-coverage: true
     runs-on: ${{ matrix.platform }}
 
     steps:
-    - uses: actions/setup-go@v1
+    - uses: actions/checkout@v2
+    - uses: actions/setup-go@v2
       with:
         go-version: ${{ matrix.go-version }}
-    - uses: actions/checkout@v2
 
     - name: Cache go modules
-      uses: actions/cache@v1
+      uses: actions/cache@v2
       with:
         path: ~/go/pkg/mod
-        key: ${{ runner.os }}-go-${{ hashFiles('go.sum') }}
+        key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
         restore-keys: ${{ runner.os }}-go-
-
-    - name: Run go fmt
-      if: runner.os != 'Windows'
-      run: diff -u <(echo -n) <(gofmt -d -s .)
-
-    - name: Run go vet
-      run: go vet ./...
 
     - name: Run go test
       run: go test -v -race -coverprofile coverage.txt -covermode atomic ./...
 
     - name: Upload coverage to Codecov
+      if: ${{ matrix.update-coverage }}
       uses: codecov/codecov-action@v1
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}

@@ -1,0 +1,13 @@
+linters:
+  enable:
+    - dogsled
+    - dupl
+    - goimports
+    - gosec
+    - govet
+    - misspell
+    - nakedret
+    - stylecheck
+    - unconvert
+    - unparam
+    - whitespace
